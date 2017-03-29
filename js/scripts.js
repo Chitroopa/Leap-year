@@ -17,18 +17,24 @@ $(document).ready(function(){
     event.preventDefault();
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
-
-    $(".year").text(year);
-
-    if(!result)
+    if ((year) && (year !== 0))
     {
-      $(".not").text("not");
+      $(".year").text(year);
+
+      if(!result)
+      {
+        $(".not").text("not");
+      }
+      else
+      {
+        $(".not").text("");
+      }
+      $("#result").show();
     }
     else
     {
-      $(".not").text("");
+      alert("Please enter valid number!");
     }
-    $("#result").show();
   });
 
 });
